@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	stackSize     = 64
+	stackSize     = 128
 	maxHeight     = stackSize - 1
 	valueDraw     = 0
 	valueMate     = 30000
@@ -222,5 +222,5 @@ func initLmr(f func(d, m float64) float64) func(d, m int) int {
 }
 
 func lmrMult(d, m float64) float64 {
-	return 3 * math.Log(d) / math.Log(5) * math.Log(m) / math.Log(22)
+	return 0.5 + 2.5*math.Log(d)/math.Log(5)*math.Log(m)/math.Log(22)
 }
